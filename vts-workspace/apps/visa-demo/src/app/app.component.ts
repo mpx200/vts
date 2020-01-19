@@ -1,16 +1,21 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { Message } from '@vts-workspace/api-interfaces';
+import { AppService } from './app.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'vts-workspace-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'VTS';
 
-  hello$ = this.http.get<Message>('/api/hello');
+  public someData$: Observable<Message>;
 
-  constructor(private http: HttpClient) {}
+  constructor(private service: AppService) {}
+
+  ngOnInit(): void {
+    this.someData$ = this.service.getSomeDataFromApi();
+  }
 }
