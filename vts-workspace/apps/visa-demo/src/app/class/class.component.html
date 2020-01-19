@@ -1,5 +1,16 @@
 <div class="demo-api">
   <h1>{{ nameOfClass }}</h1>
-  <h2>Second component message: {{ dataOnSecondComp$ | async | json }}</h2>
-  <button (click)="sendToHostComponent()">Say hi</button>
+  <ng-container *ngIf="dataOnSecondComp$ | async as second; else loading">
+    <h2 *ngFor="let item of second">
+      Second component message: {{ item | json }}
+    </h2>
+  </ng-container>
+
+  <div>
+    <button (click)="sendToHostComponent()">Say hi</button>
+  </div>
 </div>
+
+<ng-template #loading>
+  <img src="./../../assets/loader.svg" />
+</ng-template>

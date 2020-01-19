@@ -12,12 +12,12 @@ export class ClassComponent implements OnInit {
   @Input() public nameOfClass: string;
   @Output() public sayHi: EventEmitter<string> = new EventEmitter();
 
-  public dataOnSecondComp$: Observable<Message>;
+  public dataOnSecondComp$: Observable<Message[]>;
 
   constructor(private service: AppService) {}
 
   ngOnInit() {
-    this.dataOnSecondComp$ = this.service.getSomeDataFromApi();
+    this.dataOnSecondComp$ = this.service.getSomeDatasFromApi();
   }
 
   sendToHostComponent() {

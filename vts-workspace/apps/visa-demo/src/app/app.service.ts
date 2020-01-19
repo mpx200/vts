@@ -13,4 +13,8 @@ export class AppService {
   public getSomeDataFromApi(): Observable<Message> {
     return this.http.get<Message>('/api/hello');
   }
+
+  public getSomeDatasFromApi(): Observable<Message[]> {
+    return this.http.get<Message[]>('/api/hellos');
+  }
 }

@@ -12,4 +12,9 @@ export class AppController {
   getData(): Message {
     return this.appService.getData();
   }
+
+  @Get('hellos')
+  getArray(): Promise<Message[]> {
+    return this.appService.getDatas();
+  }
 }
