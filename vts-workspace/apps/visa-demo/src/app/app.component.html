@@ -11,6 +11,11 @@
   <h2>Message: {{ someData$ | async | json }}</h2>
 </div>
 
+<vts-workspace-class
+  [nameOfClass]="'Katedra za informatiku'"
+  (sayHi)="handleHello($event)"
+></vts-workspace-class>
+
 <h2>You think it's easy?</h2>
 <ul>
   <li>

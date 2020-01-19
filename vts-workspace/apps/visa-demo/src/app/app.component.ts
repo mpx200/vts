@@ -18,4 +18,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.someData$ = this.service.getSomeDataFromApi();
   }
+
+  handleHello($event) {
+    this.title = $event + ' ' + this.title
+  }
 }
