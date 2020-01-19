@@ -8,6 +8,9 @@ import { Message } from '@vts-workspace/api-interfaces';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  title = 'VTS';
+
   hello$ = this.http.get<Message>('/api/hello');
+
   constructor(private http: HttpClient) {}
 }
