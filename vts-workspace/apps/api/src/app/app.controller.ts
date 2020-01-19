@@ -17,4 +17,9 @@ export class AppController {
   getArray(): Promise<Message[]> {
     return this.appService.getDatas();
   }
+
+  @Get('classes')
+  getClasses(): Promise<any[]> {
+    return this.appService.getClasses();
+  }
 }

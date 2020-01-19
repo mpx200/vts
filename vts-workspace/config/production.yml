@@ -1,0 +1,11 @@
+server:
+  origin: http:/10.20.129.37
+  port: 3333
+
+db:
+  port: 5432
+  database: 'bidup-prod'
+  host: '10.20.129.37'
+  username: 'postgres'
+  password: 'PostGBidUp1'
+  synchronize: false

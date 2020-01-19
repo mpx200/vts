@@ -2,7 +2,9 @@
   <h1>{{ nameOfClass }}</h1>
   <ng-container *ngIf="dataOnSecondComp$ | async as second; else loading">
     <h2 *ngFor="let item of second">
-      Second component message: {{ item | json }}
+      <div>
+        <span>{{ item.name }}</span> - p:<span>{{ item.professor }}</span>
+      </div>
     </h2>
   </ng-container>
 

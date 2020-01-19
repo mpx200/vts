@@ -1,0 +1,11 @@
+server:
+  origin: http://localhost
+  port: 3333
+
+db:
+  port: 5432
+  database: 'bidup'
+  host: 'localhost'
+  username: 'postgres'
+  password: 'admin'
+  synchronize: true
